@@ -1,13 +1,47 @@
 @tailwind base;
+
+@layer base {
+  h1 {
+    @apply text-2xl;
+  }
+  h2 {
+    @apply text-xl;
+  }
+  h3 {
+    @apply text-lg;
+  }
+  a {
+    @apply text-blue-500;
+  }
+}
+
 @tailwind components;
 @tailwind utilities;
 
 #__next {
-  @apply min-h-screen flex flex-col items-center justify-center;
+  @apply min-h-screen flex flex-col items-center justify-between;
 }
 
 footer {
-  @apply flex flex-col justify-center items-center;
+  @apply flex flex-col justify-center items-center py-6 w-full;
 }
 
+.speech-bubble {
+  @apply flex flex-col justify-center items-center bg-white relative border-2 border-solid border-black rounded-xl mb-8 p-2;
+  min-height: 200px;
+}
+
+.speech-bubble:before {
+  @apply left-1/2 h-5 w-5 bg-white absolute;
+  content: "";
+  top: -webkit-calc(100% - 10px);
+  top: calc(100% - 10px);
+  transform: rotate(45deg);
+  border-bottom: inherit;
+  border-right: inherit;
+  box-shadow: inherit;
+}
+
+.speech-bubble-button {
+  @apply p-4 rounded-lg bg-orange text-black my-4 shadow-lg text-xl font-bold;
 }
