@@ -25,7 +25,7 @@ export default function MagicLink() {
 
   return (
     <>
-      <div className="container mt-8">
+      <div className="container mt-6">
         <div className='flex items-center justify-center flex-col p-4 w-full'>
           <div className='speech-bubble sm:w-full md:w-full lg:w-2/3 xl:w-2/3 2xl:w-2/3'>
             {

@@ -22,6 +22,10 @@
   @apply min-h-screen flex flex-col items-center justify-between;
 }
 
+header {
+  @apply mt-6 flex items-center justify-center sm:justify-center md:justify-center lg:justify-end xl:justify-end 2xl:justify-end;
+}
+
 footer {
   @apply flex flex-col justify-center items-center py-6 w-full;
 }
@@ -44,4 +48,8 @@ footer {
 
 .speech-bubble-button {
   @apply p-4 rounded-lg bg-orange text-black my-4 shadow-lg text-xl font-bold;
+}
+
+.default-button {
+  @apply px-3 py-2 rounded-lg bg-orange text-black shadow-lg text-base font-bold;
 }

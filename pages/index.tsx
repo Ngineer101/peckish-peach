@@ -20,12 +20,12 @@ export default function Home() {
 
   return (
     <>
-      <div className="container mt-12">
+      <div className="container">
         {
           !session ?
             <Welcome />
             :
-            <RecipeGenerator />
+            <RecipeGenerator session={session} />
         }
       </div>
       <Footer />
