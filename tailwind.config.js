@@ -15,6 +15,11 @@ module.exports = {
       black: colors.black,
       red: colors.red,
       blue: colors.blue,
+      gray: colors.gray,
+    },
+    fontFamily: {
+      sans: ['Poppins', 'cursive'],
+      serif: ['Poppins', 'cursive'],
     },
     extend: {},
   },
