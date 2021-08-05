@@ -5,7 +5,7 @@ import {
 import { supabaseClient } from '../../utils/supabaseClient';
 import OpenAI from 'openai-api';
 
-export default async function GenerateRecipe(req: NextApiRequest, res: NextApiResponse) {
+export default async function GenerateRecipeHandler(req: NextApiRequest, res: NextApiResponse) {
   const token = req.headers.token as string;
   const { data: user, error } = await supabaseClient.auth.api.getUser(token);
   if (error) {
@@ -17,16 +17,18 @@ export default async function GenerateRecipe(req: NextApiRequest, res: NextApiRe
   }
 
   supabaseClient.auth.setAuth(token);
-  const countResponse = await supabaseClient
-    .from('recipes')
-    .select('id', { count: 'exact' })
-    .eq('user_id', user.id);
-
-  if ((countResponse as any).count >= 5) {
-    return res.status(400).json({ error: 'max_free_recipes_reached' });
-  }
 
   if (req.method === "POST") {
+
+    const countResponse = await supabaseClient
+      .from('recipes')
+      .select('id', { count: 'exact' })
+      .eq('user_id', user.id);
+
+    if ((countResponse as any).count >= 5) {
+      return res.status(400).json({ error: 'max_free_recipes_reached' });
+    }
+
     let {
       ingredients,
     } = req.body;
