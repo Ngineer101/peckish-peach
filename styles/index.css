@@ -36,7 +36,7 @@ footer {
 }
 
 .speech-bubble:before {
-  @apply left-1/2 h-5 w-5 bg-white absolute;
+  @apply h-5 w-5 bg-white absolute;
   content: "";
   top: -webkit-calc(100% - 10px);
   top: calc(100% - 10px);
