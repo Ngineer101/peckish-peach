@@ -1,4 +1,5 @@
 import { GetServerSideProps, GetServerSidePropsResult } from 'next';
+import Head from 'next/head';
 import Link from 'next/link';
 import Footer from '../../components/footer';
 import SignOutButton from '../../components/signoutButton';
@@ -13,6 +14,9 @@ export default function Recipe(props: {
 }) {
   return (
     <>
+      <Head>
+        <title>{props.recipe.title.replace(':', '')}</title>
+      </Head>
       <div className='container'>
         <header>
           <Link href='/'>

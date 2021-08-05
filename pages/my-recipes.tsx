@@ -4,6 +4,7 @@ import Link from 'next/link';
 import RecipeCard from '../components/recipe-card';
 import SignOutButton from '../components/signoutButton';
 import Footer from '../components/footer';
+import Head from 'next/head';
 
 export default function MyRecipes(props: {
   recipes: {
@@ -15,6 +16,9 @@ export default function MyRecipes(props: {
 }) {
   return (
     <>
+      <Head>
+        <title>My Recipes</title>
+      </Head>
       <div className='container'>
         <header>
           <Link href='/'>
@@ -22,7 +26,7 @@ export default function MyRecipes(props: {
           </Link>
           <SignOutButton />
         </header>
-        <h1 className='text-center text-3xl font-bold mt-8 mb-4 underline'>Your recipes</h1>
+        <h1 className='text-center text-3xl font-bold mt-8 mb-4 underline'>My Recipes</h1>
         <div className='flex flex-col items-center'>
           {
             props.recipes && props.recipes.length > 0 &&

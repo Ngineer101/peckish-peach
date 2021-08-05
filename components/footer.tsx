@@ -7,6 +7,11 @@ export default function Footer() {
         </a>
         {' '}with <strong>⚡</strong> / <strong>☕</strong>
       </span>
+      <span className='my-4'>
+        <i>
+          <u className='text-sm'>This app is still experimental</u>
+        </i>
+      </span>
     </footer>
   );
 }
