@@ -47,7 +47,7 @@ footer {
 }
 
 .speech-bubble-button {
-  @apply p-4 rounded-lg bg-orange text-black my-4 shadow-lg text-xl font-bold;
+  @apply p-4 rounded-lg bg-orange text-black mt-4 mb-8 shadow-lg text-xl font-bold;
 }
 
 .default-button {

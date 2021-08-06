@@ -84,7 +84,12 @@ export default function RecipeGenerator(props: {
             error &&
             <h2 className='text-center text-xl my-4'>You have <strong>0</strong> free recipes left.</h2>
           }
-          {/* TODO: Add link to sign up page */}
+          <Link href='/get-more-recipes'>
+            <a className='text-center text-xl mb-4 bg-blue-500 text-white font-bold py-1 px-2 hover:bg-white hover:text-blue-500 border border-blue-500 border-solid'
+              style={{ transform: 'rotate(-2deg)' }}>
+              Get more recipes!
+            </a>
+          </Link>
         </div>
         <Mascot />
       </div>
