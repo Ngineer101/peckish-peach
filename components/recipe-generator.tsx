@@ -5,6 +5,7 @@ import { supabaseClient } from '../utils/supabaseClient';
 import Link from 'next/link';
 import { useRouter } from 'next/dist/client/router';
 import useSWR from 'swr';
+import Mascot from './mascot';
 
 export default function RecipeGenerator(props: {
   session: Session,
@@ -81,7 +82,7 @@ export default function RecipeGenerator(props: {
           }
           {/* TODO: Add link to sign up page */}
         </div>
-        <img src='/assets/peach-green.gif' height={300} width={300} />
+        <Mascot />
       </div>
     </>
   );

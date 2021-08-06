@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { supabaseClient } from '../utils/supabaseClient';
 import Head from 'next/head';
 import Footer from '../components/footer';
+import Mascot from '../components/mascot';
 
 export default function MagicLink() {
   const [loading, setLoading] = useState(false)
@@ -83,7 +84,7 @@ export default function MagicLink() {
             }
 
           </div>
-          <img src='/assets/peach-green.gif' height={300} width={300} />
+          <Mascot />
         </div>
       </div>
       <Footer />

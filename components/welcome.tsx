@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Mascot from './mascot';
 
 export default function Welcome() {
   return (
@@ -14,7 +15,7 @@ export default function Welcome() {
           </a>
         </Link>
       </div>
-      <img src='/assets/peach-green.gif' height={300} width={300} />
+      <Mascot />
     </div>
   );
 }
