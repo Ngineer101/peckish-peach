@@ -15,7 +15,7 @@ export default function Recipe(props: {
   return (
     <>
       <Head>
-        <title>{props.recipe.title.replace(':', '')}</title>
+        <title>{props.recipe && props.recipe.title ? props.recipe.title.replace(':', '') : 'Recipe not found'}</title>
       </Head>
       <div className='container'>
         <header>
@@ -28,33 +28,38 @@ export default function Recipe(props: {
           <SignOutButton />
         </header>
         <h1 className='text-center text-5xl font-bold my-8 underline'
-          style={{ transform: "rotate(-1deg)" }}>{props.recipe.title.replace(':', '')}</h1>
-        <div className='flex flex-col items-center'>
-          <div className='flex flex-col items-center bg-gray-200 rounded-xl shadow-2xl my-8 p-4 w-full sm:w-full md:w-full lg:w-1/2 xl:w-1/2 2xl:w-1/2'
-            style={{ transform: 'rotate(1deg)' }}>
-            <h3 className='text-center text-3xl mb-4 underline'>Ingredients</h3>
-            {
-              props.recipe && props.recipe.ingredients && props.recipe.ingredients.length > 0 &&
-              props.recipe.ingredients.map((ingredient, i) =>
-                <div key={i}>
-                  <span className='text-lg my-1 text-center'>{ingredient}</span>
-                </div>
-              )
-            }
+          style={{ transform: "rotate(-1deg)" }}>
+          {props.recipe && props.recipe.title ? props.recipe.title.replace(':', '') : 'Recipe not found'}
+        </h1>
+        {
+          props.recipe &&
+          <div className='flex flex-col items-center'>
+            <div className='flex flex-col items-center bg-gray-200 rounded-xl shadow-2xl my-8 p-4 w-full sm:w-full md:w-full lg:w-1/2 xl:w-1/2 2xl:w-1/2'
+              style={{ transform: 'rotate(1deg)' }}>
+              <h3 className='text-center text-3xl mb-4 underline'>Ingredients</h3>
+              {
+                props.recipe && props.recipe.ingredients && props.recipe.ingredients.length > 0 &&
+                props.recipe.ingredients.map((ingredient, i) =>
+                  <div key={i}>
+                    <span className='text-lg my-1 text-center'>{ingredient}</span>
+                  </div>
+                )
+              }
+            </div>
+            <div className='flex flex-col items-center bg-gray-200 rounded-xl shadow-2xl my-8 p-4 w-full sm:w-full md:w-full lg:w-1/2 xl:w-1/2 2xl:w-1/2'
+              style={{ transform: 'rotate(-1deg)' }}>
+              <h3 className='text-center text-3xl mb-4 underline'>Instructions</h3>
+              {
+                props.recipe && props.recipe.instructions && props.recipe.instructions.length > 0 &&
+                props.recipe.instructions.map((instruction, i) =>
+                  <div key={i}>
+                    <span className='text-lg my-1 text-center'>{instruction}</span>
+                  </div>
+                )
+              }
+            </div>
           </div>
-          <div className='flex flex-col items-center bg-gray-200 rounded-xl shadow-2xl my-8 p-4 w-full sm:w-full md:w-full lg:w-1/2 xl:w-1/2 2xl:w-1/2'
-            style={{ transform: 'rotate(-1deg)' }}>
-            <h3 className='text-center text-3xl mb-4 underline'>Instructions</h3>
-            {
-              props.recipe && props.recipe.instructions && props.recipe.instructions.length > 0 &&
-              props.recipe.instructions.map((instruction, i) =>
-                <div key={i}>
-                  <span className='text-lg my-1 text-center'>{instruction}</span>
-                </div>
-              )
-            }
-          </div>
-        </div>
+        }
       </div>
       <Footer />
     </>
@@ -81,7 +86,7 @@ export const getServerSideProps: GetServerSideProps = async (context: any): Prom
 
   return {
     props: {
-      recipe: {},
+      recipe: null,
     }
   }
 }
