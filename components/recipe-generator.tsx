@@ -27,7 +27,11 @@ export default function RecipeGenerator(props: {
       <div className='flex items-center justify-center flex-col p-4 w-full mt-4'>
         <div className='speech-bubble sm:w-full md:w-full lg:w-2/3 xl:w-2/3 2xl:w-2/3'>
           <h1 className='text-center text-2xl my-4'>
-            Welcome! Enter <strong>at least 4 ingredients</strong> you have at home and I will generate a delicious recipe for you <strong>🥗</strong>
+            Welcome! Enter{' '}
+            <strong className='text-white bg-black px-1 text-3xl'>
+              at least 4 ingredients
+            </strong>{' '}
+            you have at home and I will generate a delicious recipe for you <strong>🥗</strong>
           </h1>
           <textarea className='border border-solid border-black rounded-xl outline-none p-4 w-4/5' style={{ minHeight: 120 }}
             value={ingredientText} onChange={(evt) => setIngredientText(evt.target.value)}

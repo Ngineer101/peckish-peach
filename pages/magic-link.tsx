@@ -37,7 +37,11 @@ export default function MagicLink() {
               !linkSent ?
                 <>
                   <h1 className='text-center text-2xl my-4'>
-                    I will generate a <strong>delicious recipe</strong> (using AI) with the ingredients you already have at home.{' '}
+                    I will generate a delicious recipe,{' '}
+                    <strong className='text-white bg-black px-1 mr-1 text-3xl'>
+                      using AI
+                    </strong>
+                    , with the ingredients you already have at home.
                   </h1>
                   <h2 className='text-center my-2'>Please enter your email to get started.</h2>
                   <form className='w-full flex flex-col items-center'
