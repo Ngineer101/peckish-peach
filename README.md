@@ -9,19 +9,13 @@ Peckish Peach will generate recipes for you based on ingredients you have at hom
 - **Data storage** to store generated recipes
 - **Authentication** to authenticate users
 
----
-
 ## Demo
 
 Check out [this demo](https://peckish-peach.vercel.app/) to generate some nice recipes 😄
 
----
-
 ## Team member - flying solo
 
 [GitHub: Ngineer101](https://github.com/Ngineer101/) ([Twitter: @nwbotha](https://twitter.com/nwbotha))
-
----
 
 ## Memes for the win
 
