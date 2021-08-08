@@ -3,14 +3,11 @@ import Head from 'next/head';
 import Link from 'next/link';
 import Footer from '../../components/footer';
 import SignOutButton from '../../components/signoutButton';
+import { IRecipe } from '../../interfaces/IRecipe';
 import { supabaseClient } from '../../utils/supabaseClient';
 
 export default function Recipe(props: {
-  recipe: {
-    title: string,
-    instructions: string[],
-    ingredients: string[],
-  },
+  recipe: IRecipe,
 }) {
   return (
     <>
@@ -40,7 +37,7 @@ export default function Recipe(props: {
               {
                 props.recipe && props.recipe.ingredients && props.recipe.ingredients.length > 0 &&
                 props.recipe.ingredients.map((ingredient, i) =>
-                  <div key={i}>
+                  <div key={i} className='text-center'>
                     <span className='text-lg my-1 text-center'>{ingredient}</span>
                   </div>
                 )
@@ -52,7 +49,7 @@ export default function Recipe(props: {
               {
                 props.recipe && props.recipe.instructions && props.recipe.instructions.length > 0 &&
                 props.recipe.instructions.map((instruction, i) =>
-                  <div key={i}>
+                  <div key={i} className='text-center'>
                     <span className='text-lg my-1 text-center'>{instruction}</span>
                   </div>
                 )

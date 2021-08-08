@@ -5,14 +5,10 @@ import RecipeCard from '../components/recipe-card';
 import SignOutButton from '../components/signoutButton';
 import Footer from '../components/footer';
 import Head from 'next/head';
+import { IRecipe } from '../interfaces/IRecipe';
 
 export default function MyRecipes(props: {
-  recipes: {
-    id: string,
-    title: string,
-    instructions: string[],
-    ingredients: string[],
-  }[]
+  recipes: IRecipe[]
 }) {
   return (
     <>
