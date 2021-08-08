@@ -23,6 +23,12 @@ export default function Header() {
               <a className='default-button mr-4'>My recipes</a>
             </Link>
           }
+          {
+            router.pathname !== '/my-grocery-lists' &&
+            <Link href='/my-grocery-lists'>
+              <a className='default-button mr-4'>My grocery lists</a>
+            </Link>
+          }
           <SignOutButton />
         </>
       }
