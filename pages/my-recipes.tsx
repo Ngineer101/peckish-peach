@@ -1,11 +1,10 @@
 import { GetServerSideProps, GetServerSidePropsResult } from 'next';
 import { supabaseClient } from '../utils/supabaseClient';
-import Link from 'next/link';
 import RecipeCard from '../components/recipe-card';
-import SignOutButton from '../components/signoutButton';
 import Footer from '../components/footer';
 import Head from 'next/head';
 import { IRecipe } from '../interfaces/IRecipe';
+import Header from '../components/header';
 
 export default function MyRecipes(props: {
   recipes: IRecipe[]
@@ -16,12 +15,7 @@ export default function MyRecipes(props: {
         <title>My Recipes</title>
       </Head>
       <div className='container'>
-        <header>
-          <Link href='/'>
-            <a className='default-button mr-4'>Home</a>
-          </Link>
-          <SignOutButton />
-        </header>
+        <Header />
         <h1 className='text-center text-3xl font-bold mt-8 mb-4 underline'>My Recipes</h1>
         <div className='flex flex-col items-center'>
           {

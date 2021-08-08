@@ -1,8 +1,7 @@
 import { GetServerSideProps, GetServerSidePropsResult } from 'next';
 import Head from 'next/head';
-import Link from 'next/link';
 import Footer from '../../components/footer';
-import SignOutButton from '../../components/signoutButton';
+import Header from '../../components/header';
 import { IRecipe } from '../../interfaces/IRecipe';
 import { supabaseClient } from '../../utils/supabaseClient';
 
@@ -15,15 +14,7 @@ export default function Recipe(props: {
         <title>{props.recipe && props.recipe.title ? props.recipe.title.replace(':', '') : 'Recipe not found'}</title>
       </Head>
       <div className='container'>
-        <header>
-          <Link href='/'>
-            <a className='default-button mr-4'>Home</a>
-          </Link>
-          <Link href='/my-recipes'>
-            <a className='default-button mr-4'>My recipes</a>
-          </Link>
-          <SignOutButton />
-        </header>
+        <Header />
         <h1 className='text-center text-5xl font-bold my-8 underline'
           style={{ transform: "rotate(-1deg)" }}>
           {props.recipe && props.recipe.title ? props.recipe.title.replace(':', '') : 'Recipe not found'}

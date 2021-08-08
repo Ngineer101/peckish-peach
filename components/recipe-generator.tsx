@@ -1,11 +1,10 @@
 import { Session } from '@supabase/supabase-js';
 import axios from 'axios';
 import { useState } from 'react';
-import { supabaseClient } from '../utils/supabaseClient';
-import Link from 'next/link';
 import { useRouter } from 'next/dist/client/router';
 import useSWR from 'swr';
 import Mascot from './mascot';
+import Header from './header';
 
 export default function RecipeGenerator(props: {
   session: Session,
@@ -18,12 +17,7 @@ export default function RecipeGenerator(props: {
   const { data, error } = useSWR('/api/allowed-recipe-count', fetcher);
   return (
     <>
-      <header>
-        <Link href='/my-recipes'>
-          <a className='default-button mr-4'>My recipes</a>
-        </Link>
-        <button className='default-button' onClick={() => supabaseClient.auth.signOut()}>Sign out</button>
-      </header>
+      <Header />
       <div className='flex items-center justify-center flex-col p-4 w-full mt-4'>
         <div className='speech-bubble sm:w-full md:w-full lg:w-2/3 xl:w-2/3 2xl:w-2/3'>
           <h1 className='text-center text-2xl my-4'>
