@@ -7,7 +7,7 @@ import { IRecipe } from '../interfaces/IRecipe';
 import Header from '../components/header';
 
 export default function MyRecipes(props: {
-  recipes: IRecipe[]
+  recipes: IRecipe[],
 }) {
   return (
     <>

@@ -28,6 +28,7 @@ export default function RecipeGenerator(props: {
             you have at home and I will generate a delicious recipe for you <strong>🥗</strong>
           </h1>
           <textarea className='border border-solid border-black rounded-xl outline-none p-4 w-4/5' style={{ minHeight: 120 }}
+            rows={1 + (ingredientText.split('\n').length)}
             value={ingredientText} onChange={(evt) => setIngredientText(evt.target.value)}
             placeholder={'Cheese\nPasta\nTomatoes'}></textarea>
           {
