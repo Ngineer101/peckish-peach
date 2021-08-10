@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { supabaseClient } from '../utils/supabaseClient';
 import { useRouter } from 'next/dist/client/router';
-import SignOutButton from './signoutButton';
+import SignOutButton from './sign-out-button';
 
 export default function Header() {
   const router = useRouter();
