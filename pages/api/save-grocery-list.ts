@@ -40,8 +40,8 @@ export default async function SaveGroceryListHandler(req: NextApiRequest, res: N
 
       return res.status(400).send('An error occurred while saving grocery list.');
     case "PUT":
+      const id = req.query.id as any;
       const {
-        id,
         name,
         items,
       } = req.body;
