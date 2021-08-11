@@ -23,7 +23,7 @@
 }
 
 header {
-  @apply w-full mt-6 flex items-center justify-center sm:justify-center md:justify-center lg:justify-end xl:justify-end 2xl:justify-end;
+  @apply w-full mt-6 px-4 flex items-center justify-between;
 }
 
 footer {
