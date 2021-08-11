@@ -57,6 +57,9 @@ export default function GroceryList(props: {
                           })
                           .catch(error => {
                             // TODO: Handle error
+                            // TODO: remove temp fix
+                            groceryListItems[i].is_checked = val;
+                            setGroceryListItems([...groceryListItems]);
                           });
                       }}
                       type='checkbox'

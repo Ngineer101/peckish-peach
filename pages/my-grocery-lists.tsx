@@ -66,6 +66,9 @@ export default function MyGroceryLists(props: {
                                   })
                                   .catch(error => {
                                     // TODO: Handle error
+                                    // TODO: remove temp fix
+                                    groceryLists.splice(i, 1);
+                                    setGroceryLists([...groceryLists]);
                                   });
                                 onClose();
                               }}>Yes, delete it!</button>
