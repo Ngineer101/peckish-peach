@@ -5,10 +5,12 @@ import GroceryListCard from '../components/grocery-list-card';
 import Header from '../components/header';
 import { IGroceryList } from '../interfaces/IGroceryList';
 import { supabaseClient } from '../utils/supabaseClient';
+import { useRouter } from 'next/dist/client/router';
 
 export default function MyGroceryLists(props: {
   groceryLists: IGroceryList[],
 }) {
+  const router = useRouter();
   return (
     <>
       <Head>
@@ -21,12 +23,21 @@ export default function MyGroceryLists(props: {
           {
             props.groceryLists && props.groceryLists.length > 0 &&
             props.groceryLists.map((groceryList, i) =>
-              <GroceryListCard key={i} name={groceryList.name} href={`/grocery-list/${groceryList.id}`} />
+              <GroceryListCard
+                key={i}
+                name={groceryList.name}
+                href={`/grocery-list/${groceryList.id}`}
+                onEditClick={(evt) => router.push(`/grocery-list/${groceryList.id}/edit`)}
+                onDeleteClick={(evt) => {
+                  // TODO: Add delete logic
+                }} />
             )
           }
           {
             (!props.groceryLists || props.groceryLists.length == 0) &&
-            <GroceryListCard name={`You don't have any grocery lists yet.`} href={null} />
+            <span className='text-center text-black font-bold text-lg p-4 rounded-xl shadow-lg bg-orange my-4 mx-2'>
+              You don't have any grocery lists yet.
+            </span>
           }
         </div>
       </div>
