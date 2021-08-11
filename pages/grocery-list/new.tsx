@@ -11,7 +11,6 @@ export default function CreateNewGroceryList() {
   const session = supabaseClient.auth.session();
   const router = useRouter();
   if (!session) {
-    router.replace('/');
     return null;
   }
 
