@@ -24,8 +24,8 @@ export default function GroceryList(props: {
       <Head>
         <title>{props.groceryList.name ? props.groceryList.name : 'Grocery List'}</title>
       </Head>
+      <Header />
       <div className='container'>
-        <Header />
         <h1 className='text-center text-5xl font-bold my-8 underline'
           style={{ transform: "rotate(-1deg)" }}>
           {props.groceryList && props.groceryList.name ? props.groceryList.name : 'Grocery list not found'}

@@ -16,8 +16,8 @@ export default function MyRecipes(props: {
       <Head>
         <title>My Recipes</title>
       </Head>
+      <Header />
       <div className='container'>
-        <Header />
         <h1 className='text-center text-3xl font-bold mt-8 mb-2 underline'>My Recipes</h1>
         <div className='flex justify-center items-center'>
           <Link href='/'>

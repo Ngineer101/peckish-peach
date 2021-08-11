@@ -13,8 +13,8 @@ export default function Recipe(props: {
       <Head>
         <title>{props.recipe && props.recipe.title ? props.recipe.title.replace(':', '') : 'Recipe not found'}</title>
       </Head>
+      <Header />
       <div className='container'>
-        <Header />
         <h1 className='text-center text-5xl font-bold my-8 underline'
           style={{ transform: "rotate(-1deg)" }}>
           {props.recipe && props.recipe.title ? props.recipe.title.replace(':', '') : 'Recipe not found'}

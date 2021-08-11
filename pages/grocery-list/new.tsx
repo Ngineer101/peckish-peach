@@ -25,8 +25,8 @@ export default function CreateNewGroceryList() {
       <Head>
         <title>Create new grocery list</title>
       </Head>
+      <Header />
       <div className='container'>
-        <Header />
         <h1 className='text-center text-3xl font-bold mt-8 mb-4 underline'>Create new grocery list</h1>
         <div className='flex justify-center'>
           <div className='w-full sm:w-full md:w-full lg:w-1/2 xl:w-1/2 2xl:w-1/2 p-2 mt-4'>
