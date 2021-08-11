@@ -5,6 +5,8 @@ import Footer from '../components/footer';
 import Head from 'next/head';
 import { IRecipe } from '../interfaces/IRecipe';
 import Header from '../components/header';
+import Link from 'next/link';
+import PlusIcon from '@heroicons/react/outline/PlusIcon';
 
 export default function MyRecipes(props: {
   recipes: IRecipe[],
@@ -14,9 +16,17 @@ export default function MyRecipes(props: {
       <Head>
         <title>My Recipes</title>
       </Head>
+      <Header />
       <div className='container'>
-        <Header />
-        <h1 className='text-center text-3xl font-bold mt-8 mb-4 underline'>My Recipes</h1>
+        <h1 className='text-center text-3xl font-bold mt-8 mb-2 underline'>My Recipes</h1>
+        <div className='flex justify-center items-center'>
+          <Link href='/'>
+            <a className='new-recipe-button'>
+              <PlusIcon className='h-5 w-5 mr-2' />
+              New recipe
+            </a>
+          </Link>
+        </div>
         <div className='flex flex-col items-center'>
           {
             props.recipes && props.recipes.length > 0 &&

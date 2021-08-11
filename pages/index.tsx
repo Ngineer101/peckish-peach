@@ -6,6 +6,7 @@ import Welcome from '../components/welcome';
 import RecipeGenerator from '../components/recipe-generator';
 import Footer from '../components/footer';
 import Head from 'next/head';
+import Header from '../components/header';
 
 export default function Home() {
   const [session, setSession] = useState<Session | null>(null)
@@ -28,6 +29,10 @@ export default function Home() {
       <Head>
         <title>Home</title>
       </Head>
+      {
+        session &&
+        <Header />
+      }
       <div className="container">
         {
           !session ?

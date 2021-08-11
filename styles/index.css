@@ -23,7 +23,7 @@
 }
 
 header {
-  @apply w-full mt-6 flex items-center justify-center sm:justify-center md:justify-center lg:justify-end xl:justify-end 2xl:justify-end;
+  @apply w-full mt-6 px-4 flex items-center justify-between;
 }
 
 footer {
@@ -52,4 +52,18 @@ footer {
 
 .default-button {
   @apply px-3 py-2 rounded-lg bg-orange text-black shadow-lg text-base font-bold;
+}
+
+.icon-button {
+  @apply h-8 w-8 cursor-pointer hover:bg-gray-100 hover:bg-opacity-70 p-1 rounded-lg;
+}
+
+.new-grocery-list-button {
+  @apply px-3 py-2 rounded-lg shadow-lg text-base font-bold text-white bg-black flex items-center mb-4;
+  @apply hover:text-black hover:bg-white border border-solid border-black;
+}
+
+.new-recipe-button {
+  @apply px-3 py-2 rounded-lg shadow-lg text-base font-bold text-white bg-black flex items-center mb-4;
+  @apply hover:text-black hover:bg-white border border-solid border-black;
 }
