@@ -6,6 +6,8 @@ import Header from '../components/header';
 import { IGroceryList } from '../interfaces/IGroceryList';
 import { supabaseClient } from '../utils/supabaseClient';
 import { useRouter } from 'next/dist/client/router';
+import Link from 'next/link';
+import PlusIcon from '@heroicons/react/outline/PlusIcon';
 
 export default function MyGroceryLists(props: {
   groceryLists: IGroceryList[],
@@ -18,7 +20,15 @@ export default function MyGroceryLists(props: {
       </Head>
       <div className='container'>
         <Header />
-        <h1 className='text-center text-3xl font-bold mt-8 mb-4 underline'>My Grocery Lists</h1>
+        <h1 className='text-center text-3xl font-bold mt-8 mb-2 underline'>My Grocery Lists</h1>
+        <div className='flex justify-center items-center'>
+          <Link href='/grocery-list/new'>
+            <a className='new-grocery-list-button'>
+              <PlusIcon className='h-5 w-5 mr-2' />
+              New grocery list
+            </a>
+          </Link>
+        </div>
         <div className='flex flex-col items-center'>
           {
             props.groceryLists && props.groceryLists.length > 0 &&

@@ -57,3 +57,8 @@ footer {
 .icon-button {
   @apply h-8 w-8 cursor-pointer hover:bg-gray-100 hover:bg-opacity-70 p-1 rounded-lg;
 }
+
+.new-grocery-list-button {
+  @apply px-3 py-2 rounded-lg shadow-lg text-base font-bold text-white bg-black flex items-center mb-4;
+  @apply hover:text-black hover:bg-white border border-solid border-black;
+}
