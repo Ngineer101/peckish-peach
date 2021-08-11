@@ -62,3 +62,8 @@ footer {
   @apply px-3 py-2 rounded-lg shadow-lg text-base font-bold text-white bg-black flex items-center mb-4;
   @apply hover:text-black hover:bg-white border border-solid border-black;
 }
+
+.new-recipe-button {
+  @apply px-3 py-2 rounded-lg shadow-lg text-base font-bold text-white bg-black flex items-center mb-4;
+  @apply hover:text-black hover:bg-white border border-solid border-black;
+}
