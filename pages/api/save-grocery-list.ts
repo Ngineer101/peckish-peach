@@ -75,18 +75,22 @@ export default async function SaveGroceryListHandler(req: NextApiRequest, res: N
 
       return res.status(400).send('Error updating grocery list');
     case "DELETE":
+      console.time('delete-grocery-list');
+      console.timeLog('delete-grocery-list', new Date());
       await supabaseClient
         .from('grocery_list_items')
         .delete()
         .eq('grocery_list_id', req.query.id)
         .eq('user_id', user.id);
 
+      console.timeLog('delete-grocery-list', new Date());
       await supabaseClient
         .from('grocery_lists')
         .delete()
         .eq('id', req.query.id)
         .eq('user_id', user.id);
 
+      console.timeLog('delete-grocery-list', new Date());
       return res.status(204).send('Grocery list successfully deleted.');
     default:
       return res.status(405).send('Method not allowed');
