@@ -49,7 +49,7 @@ export default function MagicLink() {
                       e.preventDefault()
                       handleLogin(email)
                     }}>
-                    <div className='w-full px-4 pt-4'>
+                    <div className='w-full p-4'>
                       <input
                         className="w-full p-4 text-lg border-2 border-black border-solid rounded-lg outline-none"
                         autoFocus={true}
@@ -75,28 +75,6 @@ export default function MagicLink() {
                       </>
                     </button>
                   </form>
-                  <span>OR</span>
-                  <>
-                    <h1 className='text-center text-2xl mt-8 mb-4'>Sign in with one of these providers.</h1>
-                    <div className='flex flex-col justify-center items-center'>
-                      <button className='mb-4'
-                        onClick={async (evt) => {
-                          const { user, session, error } = await supabaseClient.auth.signIn({
-                            provider: 'apple'
-                          });
-                        }}>
-                        <img src='/assets/appleid_button.png' className='h-10' />
-                      </button>
-                      <button className='mb-4'
-                        onClick={async (evt) => {
-                          const { user, session, error } = await supabaseClient.auth.signIn({
-                            provider: 'google'
-                          })
-                        }}>
-                        <img src='/assets/btn_google_signin.png' className='h-12' />
-                      </button>
-                    </div>
-                  </>
                 </>
                 :
                 <>
