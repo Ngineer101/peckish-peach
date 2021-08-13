@@ -40,8 +40,8 @@ export default function Recipe(props: {
               {
                 props.recipe && props.recipe.instructions && props.recipe.instructions.length > 0 &&
                 props.recipe.instructions.map((instruction, i) =>
-                  <div key={i} className='text-center'>
-                    <span className='text-lg my-1 text-center'>{instruction}</span>
+                  <div key={i} className='text-center my-1'>
+                    <span className='text-lg text-center'>{instruction}</span>
                   </div>
                 )
               }
