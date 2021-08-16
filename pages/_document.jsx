@@ -18,7 +18,7 @@ class MyDocument extends Document {
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link rel="preconnect" href="https://fonts.gstatic.com" />
           <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet" />
-          <script defer data-domain="peckish-peach.vercel.app" src="https://plausible.io/js/plausible.js"></script>
+          <script defer data-domain="skrummy.co" src="https://plausible.io/js/plausible.js"></script>
         </Head>
         <body className='bg-lightGreen min-h-screen'>
           <Main />
